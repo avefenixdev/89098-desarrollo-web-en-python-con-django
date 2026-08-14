@@ -70,3 +70,37 @@ Entrada para Web Server Gateway Interface
 
 > asgi.py
 Entrada ASGI, que permite trabajar con aplicaciones asíncronicas
+
+## Diferencias entre Proyecto y Aplicación
+
+
+```sh
+py manage.py startapp usuarios
+py manage.py startapp productos
+```
+
+> Proyecto -> Representa la configuración global de la aplicación django
+
+> Aplicación -> Representa una funcionalidad o dominio.
+
+```
+usuarios/
+productos/
+pedidos/
+pagos/
+```
+
+> Una aplicación puede contenedor
+
+>> Usuarios
+
+```
+models.py
+view.py
+admin.py
+test.py
+```
+
+> Configuración base de URLs
+
+<configuracion/urls.py>

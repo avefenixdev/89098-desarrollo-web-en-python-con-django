@@ -1,3 +1,10 @@
+
+from django.contrib import admin
+from django.urls import path
+
+from usuarios import views as usuarios_views
+from productos import views as productos_views
+
 """
 URL configuration for configuracion project.
 
@@ -14,10 +21,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
-from django.contrib import admin
-from django.urls import path
-
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("hola/", usuarios_views.hola),
+    path("chau/", usuarios_views.despedirse),
+    path("bienvenida/", usuarios_views.bienvenida),
+    path("usuarios/<int:id>", usuarios_views.usuario),
+    path("", productos_views.inicio),
+    path("productos/", productos_views.productos),
+    path("productos/<int:id>", productos_views.producto)
 ]
+
+handler404 = "usuarios.views.pagina_404"
+
+""" Parámetros en la URLs """
+# path("usuarios/<tipo-dato:identificador>")
