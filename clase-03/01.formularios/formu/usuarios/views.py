@@ -24,16 +24,21 @@ def registro(request):
 
 def guardar(request):
 
-
     if request.method == "POST":
         nombre = request.POST.get('nombre')
         email = request.POST.get('email')
         edad = request.POST.get('edad')
+        comentario = request.POST.get('comentario')
+        pais = request.POST.get('pais')
+        terminos = request.POST.get('acepto_terminos')
 
         print(nombre)
         print(email)
         print(edad)
+        print(comentario)
+        print(pais)
+        print(terminos)
 
-        return HttpResponse(f"Nombre: { nombre }, Email: {email}, Edad: {edad}")
+        return HttpResponse(f"Nombre: { nombre }, Email: {email}, Edad: {edad}, Comentario: {comentario}")
 
     return HttpResponse("Método no permitido")

@@ -1,6 +1,9 @@
 <h1>Registro de usuario</h1>
 
-<form action="POST" action="{% url 'guardar' %}">
+<form method="POST" action="{% url 'guardar' %}">
+<!-- <form method="POST"> -->
+    
+    {% csrf_token %}
 
     {{ form }}
 
