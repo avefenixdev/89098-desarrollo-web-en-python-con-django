@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+def inicio_productos(request):
+    #return HttpResponse('Listado de productos')
+    return render(request, 'productos/index.html')
