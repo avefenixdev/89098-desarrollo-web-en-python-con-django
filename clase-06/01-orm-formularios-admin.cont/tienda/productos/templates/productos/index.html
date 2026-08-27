@@ -5,20 +5,43 @@
     <h1>Productos</h1>
     <hr>
 
-    <ul>
-        {% for producto in productos %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Color</th>
+                <th>Descripción</th>
+                <th>Stock</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
 
-            <li>
-                {{ producto.nombre }} - {{ producto.categoria.nombre }}
-            </li>
+            {% for producto in productos %}
 
-        {% empty %}
+            <tr>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.color}}</td>
+                <td>{{producto.descripcion}}</td>
+                <td>{{producto.stock}}</td>
+                <td>${{producto.precio}}</td>
+                <td>
+                    <button class="btn btn-primary">Detalle</button>
+                    <button class="btn btn-warning">Editar</button>
+                    <button class="btn btn-danger">Borrar</button>
+                </td>
+            </tr>
 
-            <li>
-                No hay productos dentro de los registros
-            </li>
+            {% empty %}
 
-        {% endfor %}
-    </ul>
+                <tr>
+                    <td>
+                        No hay productos dentro de los registros
+                    </td>
+                </tr>
 
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
