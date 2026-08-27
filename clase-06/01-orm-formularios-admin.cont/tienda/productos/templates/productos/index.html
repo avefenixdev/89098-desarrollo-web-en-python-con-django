@@ -27,9 +27,9 @@
                 <td>{{producto.stock}}</td>
                 <td>${{producto.precio}}</td>
                 <td>
-                    <button class="btn btn-primary">Detalle</button>
-                    <button class="btn btn-warning">Editar</button>
-                    <button class="btn btn-danger">Borrar</button>
+                    
+                    <a href="{% url 'productos:editar' producto.id %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'productos:eliminar' producto.id %}" class="btn btn-danger">Borrar</a>
                 </td>
             </tr>
 
