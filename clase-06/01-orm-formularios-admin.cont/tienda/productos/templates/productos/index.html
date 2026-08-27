@@ -5,4 +5,20 @@
     <h1>Productos</h1>
     <hr>
 
+    <ul>
+        {% for producto in productos %}
+
+            <li>
+                {{ producto.nombre }} - {{ producto.categoria.nombre }}
+            </li>
+
+        {% empty %}
+
+            <li>
+                No hay productos dentro de los registros
+            </li>
+
+        {% endfor %}
+    </ul>
+
 {% endblock %}

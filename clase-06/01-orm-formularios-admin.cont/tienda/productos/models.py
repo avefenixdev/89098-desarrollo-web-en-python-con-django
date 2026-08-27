@@ -1,4 +1,5 @@
 from django.db import models
+from categorias.models import Categoria
 
 class Producto(models.Model):
 
@@ -19,6 +20,13 @@ class Producto(models.Model):
     )
     fecha_creacion = models.DateTimeField(
         auto_now_add=True
+    )
+
+    categoria = models.ForeignKey(
+        Categoria,
+        on_delete=models.PROTECT,
+        related_name="productos",
+        null=True
     )
 
     def __str__(self):

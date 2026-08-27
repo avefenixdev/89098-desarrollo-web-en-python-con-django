@@ -88,3 +88,31 @@ py manage.py createsuperuser
 ```
 localhost:8000/admin
 ```
+
+## Descargar de Github el proyecto
+
+```sh
+py -m venv dev
+```
+
+### Activar el entorno
+
+```sh
+.\Scripts\activate
+```
+
+### Instalar Django y el driver de postgreSQL
+
+```sh
+pip install django
+pip install "psycopg[binary]"
+```
+
+### Crear las migraciones
+
+```sh
+py manage.py makemigrations
+py manage.py migrate
+py manage.py createsuperuser
+```
+
